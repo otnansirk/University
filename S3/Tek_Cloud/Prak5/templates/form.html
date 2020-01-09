@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Prak 4</title>
+</head>
+<body>
+
+<center>
+    <h3>Make Quote With Me</h3>
+</center>
+<div class="container">
+    <form action="/quotes" method="POST">
+        <label for="fname">Creator</label>
+        <input type="text" name="autor" placeholder="Your name.." required>
+
+        <label for="lname">Quote</label>
+        <input type="text" name="quote" placeholder="Your quote" required>
+
+        <input type="reset" value="Reset">
+        <input type="submit" value="Submit" name="save">
+    </form>
+</div>
+
+
+<center>
+    <h3>Quotes</h3>
+</center>
+
+<div class="container">
+    {% for value in data %}
+        <fieldset>
+            <legend>{{ value['autor'] }}</legend>
+            <p>{{ value['quote'] }}</p>
+        </fieldset>
+    {% endfor %}
+</div>
+</body>
+</html>
