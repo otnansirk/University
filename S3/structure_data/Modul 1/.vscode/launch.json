@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - p5_inputDataViaKeyboard",
+            "request": "launch",
+            "mainClass": "p5_inputDataViaKeyboard"
+        }
+    ]
+}

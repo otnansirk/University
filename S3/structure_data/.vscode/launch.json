@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Structure Data_4f896ff3"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Latihan",
+            "request": "launch",
+            "mainClass": "Latihan"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - p1_pembagian",
+            "request": "launch",
+            "mainClass": "p1_pembagian"
+        }
+    ]
+}
