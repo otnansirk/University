@@ -1,0 +1,131 @@
+
+  body {
+    font-family: "Lato", sans-serif;
+  }
+
+  .mt-20 {
+    margin-top: 20px;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 240px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background: rgb(24,20,88);
+    background: linear-gradient(45deg, rgba(24,20,88,1) 0%, rgba(49,49,242,1) 30%, rgba(0,212,255,1) 100%);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #48148c;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidenav h2 {
+      color: #fff
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .main .main-header .input-search {
+    width:20%;
+  }
+
+  .main {
+    margin-left: 240px;
+    font-size: 24px;
+    padding: 0px 20px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    margin: 20px auto;
+    table-layout: auto;
+  }
+  
+  .fixed {
+    table-layout: fixed;
+  }
+  
+  table,
+  td,
+  th {
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    border: solid 1px;
+    text-align: center;
+  }
+  
+  /* form */
+  input[type=text], input[type=number], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+  input[type=submit], input[type=reset] {
+    padding: 12px 20px;
+    cursor: pointer;
+    background: rgb(24,20,88);
+    background: linear-gradient(45deg, rgba(24,20,88,1) 0%, rgba(49,49,242,1) 30%, rgba(0,212,255,1) 100%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    transition: 0.3s;
+  }
+  input[type=submit]:hover, input[type=reset]:hover {
+    background: rgb(24,20,88);
+    background: linear-gradient(213deg, rgba(24,20,88,1) 0%, rgba(49,49,242,1) 30%, rgba(0,212,255,1) 100%);
+    color: #1b1261;
+  }
+
+  /* alert message */
+.alert {
+  padding: 20px;
+  margin: 50px 0px;
+}
+
+.danger {
+  background-color: #f44336;
+  color: white;
+}
+.success {
+  background-color: #36f46f;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
