@@ -1,7 +1,7 @@
 ## UAS Semester 4
 <img src="https://1.bp.blogspot.com/-W4GZnxHLY2o/XWojkqtukkI/AAAAAAAAAjM/m2JfoXaSOsQlk2W0TGm5p1VH5uS9GD5hQCLcBGAs/s1600/44.AKAKOM.png" width="100"/>
 
-##### Import fle `krisnanto.sql`.
+##### Import DB `krisnanto.sql`.
 
 ##### Rename fle `env.example.php` dengan `env.php` lalu sesuaikan credential DB nya.
 
