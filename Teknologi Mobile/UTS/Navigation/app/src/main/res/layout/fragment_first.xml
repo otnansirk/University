@@ -21,7 +21,7 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="90dp"
         android:text="Nama" />
     <TextView
         android:layout_width="match_parent"
@@ -43,6 +43,21 @@
         android:textAlignment="center"
         android:textSize="22dp"
         android:text="185411144" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
+        android:text="Kelas" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="22dp"
+        android:text="K1" />
 
     <LinearLayout
         android:id="@+id/mainQ"
