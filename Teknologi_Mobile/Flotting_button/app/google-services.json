@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "377537377920",
+    "project_id": "flotting-button",
+    "storage_bucket": "flotting-button.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:377537377920:android:02cf4959378b52ac2f9865",
+        "android_client_info": {
+          "package_name": "com.example.flotting_button"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "377537377920-2jj8fo5a905er0moglqucs4bv91ehv10.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1n3iqoQ5nWPGK3QWmQkSp7D9Tn03WQOY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "377537377920-2jj8fo5a905er0moglqucs4bv91ehv10.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
