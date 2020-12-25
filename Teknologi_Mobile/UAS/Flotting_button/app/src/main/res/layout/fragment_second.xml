@@ -16,28 +16,36 @@ android:layout_height="match_parent">
             android:padding="16dp"
             android:orientation="vertical">
 
-            <Button
+            <TextView
                 android:id="@+id/button_second"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginBottom="30dp"
+                android:background="@color/white"
+                android:textColor="@color/color_btn"
+                android:shadowColor="@color/black"
+                android:padding="10dp"
                 android:text="Save"/>
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/transparant"
                 android:hint="Title"
                 />
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/inputDiary"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your Tweet"
+                android:layout_height="550dp"
+                android:hint="Your Diary"
+                android:inputType="textMultiLine"
                 android:minLines="3"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:gravity="top"
+                android:background="@color/transparant"
                 />
 
         </LinearLayout>

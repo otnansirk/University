@@ -2,20 +2,21 @@ package com.example.flotting_button
 
 import android.app.AlertDialog
 import android.content.Context
-import android.text.Editable
+import android.text.Html
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.google.firebase.database.FirebaseDatabase
 
-class DiaryAdapter(val mctx : Context, val layoutId : Int, val listD : List<Diary>): ArrayAdapter<Diary> (mctx, layoutId, listD) {
+
+class DiaryAdapter(val mctx: Context, val layoutId: Int, val listD: List<Diary>): ArrayAdapter<Diary>(mctx, layoutId, listD) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val layoutInflater : LayoutInflater = LayoutInflater.from(mctx)
@@ -29,11 +30,11 @@ class DiaryAdapter(val mctx : Context, val layoutId : Int, val listD : List<Diar
 
         dtitle.text = data.id
         dtitle.text = if (data.title.length <= 10) data.title else data.title.substring(10)+"..."
-        dcontent.text = if (data.diary.length <= 20) data.diary else data.diary.substring(0,0)+"..."
+        dcontent.text = if (data.diary.length <= 40) data.diary else data.diary.substring(0, 40)+"..."
 
         view.setOnClickListener {
 //            Toast.makeText(context, position.toString(), Toast.LENGTH_SHORT).show()
-            showDialog(data ,view)
+            showDialog(data, view)
         }
 
         return view
@@ -52,20 +53,19 @@ class DiaryAdapter(val mctx : Context, val layoutId : Int, val listD : List<Diar
         dcontent.text = data.diary
 
         builder.setView(view)
-        builder.setNegativeButton("Delete"){ p0,p1 ->
+        builder.setNegativeButton(Html.fromHtml("<font color='#F35F5F'>Delete</font>")){ p0, p1 ->
             val itemdiary = FirebaseDatabase.getInstance().getReference("Diary").child(data.id)
             itemdiary.removeValue()
             notifyDataSetChanged()
             Toast.makeText(context, "Deleted Successfully", Toast.LENGTH_SHORT).show()
         }
-        builder.setPositiveButton("Update") {p0,p1 ->
+        builder.setPositiveButton(Html.fromHtml("<font color='#695880'>Update</font>")) { p0, p1 ->
             val dt = bundleOf(
                     Pair("id", data.id),
                     Pair("title", data.title),
                     Pair("diary", data.diary)
             )
             v.findNavController().navigate(R.id.action_FirstFragment_to_editDiaryFragment2, dt)
-//            detailData(data)
         }
 
         val alert = builder.create()

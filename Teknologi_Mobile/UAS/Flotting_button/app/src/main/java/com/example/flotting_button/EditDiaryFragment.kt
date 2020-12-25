@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -42,7 +43,7 @@ class EditDiaryFragment : Fragment() {
         etitle.setText(title)
         econtent.setText(diary)
 
-        view.findViewById<Button>(R.id.btnedit).setOnClickListener {
+        view.findViewById<TextView>(R.id.btnedit).setOnClickListener {
 
             val dtitle = view.findViewById<EditText>(R.id.eInputTitle).text.toString()
             val dcontent = view.findViewById<EditText>(R.id.eInputDiary).text.toString()

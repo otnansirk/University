@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
@@ -27,9 +28,8 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<Button>(R.id.button_second).setOnClickListener {
+        view.findViewById<TextView>(R.id.button_second).setOnClickListener {
             savedata(view)
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }
 
@@ -38,14 +38,20 @@ class SecondFragment : Fragment() {
         val title = view.findViewById<TextInputEditText>(R.id.inputTitle).text.toString()
         val diary = view.findViewById<TextInputEditText>(R.id.inputDiary).text.toString()
 
-        val ref =  FirebaseDatabase.getInstance().getReference("Diary")
+        if (title.isEmpty()){
+            Toast.makeText(activity, "Title is required", Toast.LENGTH_SHORT).show()
+        }else if (diary.isEmpty()){
+            Toast.makeText(activity, "Diary is required", Toast.LENGTH_SHORT).show()
+        } else {
+            val ref =  FirebaseDatabase.getInstance().getReference("Diary")
 
-        val diaryId   = ref.push().key.toString()
-        val dataDiary = Diary(title, diary, diaryId)
+            val diaryId   = ref.push().key.toString()
+            val dataDiary = Diary(title, diary, diaryId)
 
-        ref.child(diaryId).setValue(dataDiary).addOnCompleteListener{
-            Toast.makeText(activity, "Successfuly", Toast.LENGTH_SHORT).show()
+            ref.child(diaryId).setValue(dataDiary).addOnCompleteListener{
+                Toast.makeText(activity, "Successfuly", Toast.LENGTH_SHORT).show()
+            }
+            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
-
     }
 }
