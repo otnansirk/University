@@ -5,20 +5,35 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class CommunicationViewModel: ViewModel() {
-    private val mName = MutableLiveData<String>()
-    private val mAddress = MutableLiveData<String>()
+    private val mBarang = MutableLiveData<String>()
+    private val mHarga = MutableLiveData<String>()
+    private val mJumlah = MutableLiveData<String>()
+    private val mTotal = MutableLiveData<String>()
 
-    val name: LiveData<String>
-        get() = mName
+    val barang: LiveData<String>
+        get() = mBarang
 
-    fun setName(name: String) {
-        mName.value = name
+    fun setBarang(barang: String) {
+        mBarang.value = barang
     }
 
-    val address: LiveData<String>
-        get() = mAddress
+    val harga: LiveData<String>
+        get() = mHarga
 
-    fun setAddress(address: String) {
-        mAddress.value = address
+    fun setHarga(harga: String) {
+        mHarga.value = harga
     }
+    val jumlah: LiveData<String>
+        get() = mJumlah
+
+    fun setJumlah(jumlah: String) {
+        mJumlah.value = jumlah
+    }
+    val total: LiveData<String>
+        get() = mTotal
+
+    fun setTotal(total: String) {
+        mTotal.value = total
+    }
+
 }

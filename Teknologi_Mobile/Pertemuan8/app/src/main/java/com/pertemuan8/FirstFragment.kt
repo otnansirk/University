@@ -35,11 +35,12 @@ class FirstFrament : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val nameEditText = view.findViewById<TextInputEditText>(R.id.textInputTextName)
-        val addressEditText = view.findViewById<TextInputEditText>(R.id.textInputTextAddress)
-//        val btn_sendtosecondfragment = view.findViewById<Button>(R.id.btnSendToFragment)
+        val barangEditText = view.findViewById<TextInputEditText>(R.id.textInputTextBarang)
+        val hargaEditText = view.findViewById<TextInputEditText>(R.id.textInputTextHarga)
+        val jumlahEditText = view.findViewById<TextInputEditText>(R.id.textInputTextJumlah)
 
-        nameEditText.addTextChangedListener(
+
+        barangEditText.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(
                         charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
@@ -47,15 +48,14 @@ class FirstFrament : Fragment() {
 
                 override fun onTextChanged(charSequence: CharSequence,
                                            i: Int, i1: Int, i2: Int) {
-                    Toast.makeText(activity, "Its toast!", Toast.LENGTH_SHORT).show()
-                    communicationViewModel!!.setName(charSequence.toString())
+                    communicationViewModel!!.setBarang(charSequence.toString())
                 }
 
                 override fun afterTextChanged(editable: Editable) {
             }
         })
 
-        addressEditText.addTextChangedListener(
+        hargaEditText.addTextChangedListener(
             object : TextWatcher {
                 override fun beforeTextChanged(
                         charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
@@ -63,17 +63,31 @@ class FirstFrament : Fragment() {
 
                 override fun onTextChanged(charSequence: CharSequence,
                                            i: Int, i1: Int, i2: Int) {
-                    Toast.makeText(activity, "Its toast!", Toast.LENGTH_SHORT).show()
-                    communicationViewModel!!.setAddress(charSequence.toString())
+                    communicationViewModel!!.setHarga(charSequence.toString())
                 }
 
                 override fun afterTextChanged(editable: Editable) {
             }
         })
 
-//        btn_sendtosecondfragment.setOnClickListener(View.OnClickListener {
-//            Toast.makeText(activity, "Its toast!", Toast.LENGTH_SHORT).show()
-//        })
+        jumlahEditText.addTextChangedListener(
+                object : TextWatcher {
+                    override fun beforeTextChanged(
+                            charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
+                    }
+
+                    override fun onTextChanged(charSequence: CharSequence,
+                                               i: Int, i1: Int, i2: Int) {
+
+                        communicationViewModel!!.setJumlah(charSequence.toString())
+                        var harga = hargaEditText.text.toString()
+                        var total = harga.toInt() * charSequence.toString().toInt()
+                        communicationViewModel!!.setTotal("Total Bayar : "+total.toString())
+                    }
+
+                    override fun afterTextChanged(editable: Editable) {
+                    }
+                })
 
     }
 

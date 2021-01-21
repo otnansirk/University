@@ -10,8 +10,10 @@ import androidx.lifecycle.ViewModelProviders
 
 class SecondFragment : Fragment() {
     private var communicationViewModel: CommunicationViewModel? = null
-    private var txtName: TextView? = null
-    private var txtAddress: TextView? = null
+    private var txtBarang: TextView? = null
+    private var txtHarga: TextView? = null
+    private var txtJumlah: TextView? = null
+    private var txtTotal: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +33,15 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
     {
         super.onViewCreated(view, savedInstanceState)
-        txtName = view.findViewById(R.id.textViewName)
-        txtAddress = view.findViewById(R.id.textViewAddress)
-        communicationViewModel!!.name.observe(requireActivity(), { s -> txtName!!.text = s })
-        communicationViewModel!!.address.observe(requireActivity(), { s -> txtAddress!!.text = s })
+        txtBarang = view.findViewById(R.id.textViewBarang)
+        txtHarga = view.findViewById(R.id.textViewHarga)
+        txtJumlah = view.findViewById(R.id.textViewJumlah)
+        txtTotal = view.findViewById(R.id.textViewTotal)
+
+        communicationViewModel!!.barang.observe(requireActivity(), { s -> txtBarang!!.text = s })
+        communicationViewModel!!.harga.observe(requireActivity(), { s -> txtHarga!!.text = s })
+        communicationViewModel!!.jumlah.observe(requireActivity(), { s -> txtJumlah!!.text = s })
+        communicationViewModel!!.total.observe(requireActivity(), { s -> txtTotal!!.text = s })
 
     }
 
