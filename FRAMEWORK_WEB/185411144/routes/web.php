@@ -22,4 +22,7 @@ Route::get('segi-empat/inputSegiEmpat',
  ->name('segi-empat.inputSegiEmpat');
 
 Route::post('segi-empat/hasil','App\Http\Controllers\SegiEmpatController@hasil')
- ->name('segi-empat.hasil'); 
+ ->name('segi-empat.hasil');
+
+Route::resource('propinsi', 'App\Http\Controllers\PropinsiController');
+Route::resource('kota', 'App\Http\Controllers\KotaController');
