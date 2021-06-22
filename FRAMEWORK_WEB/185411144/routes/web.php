@@ -26,3 +26,4 @@ Route::post('segi-empat/hasil','App\Http\Controllers\SegiEmpatController@hasil')
 
 Route::resource('propinsi', 'App\Http\Controllers\PropinsiController');
 Route::resource('kota', 'App\Http\Controllers\KotaController');
+Route::resource('anggota', 'App\Http\Controllers\AnggotaController');
